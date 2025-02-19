@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended:false}));
 
 app.use(express.static(__dirname + '/public'));
 
-app.get("/", async (requestAnimationFrame,res) => {
+app.get("/", async (req,res) => {
     try {
         const response = await axios.get(base_url + '/books');
         res.status("books",{ books: response.data});
